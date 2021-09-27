@@ -14,11 +14,11 @@ new_value = True if value < 100 else False
 print(new_value)
 ####################################################################
 # 4
-my_str = ('Have a nice day!')
+my_str = ('have a nice day!')
 print(my_str.upper())
 ####################################################################
 # 5
-my_str = ('Have a nice day!')
+my_str = ('HAVE A NICE DAY!')
 print(my_str.lower())
 ####################################################################
 # 6
