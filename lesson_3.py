@@ -152,16 +152,16 @@ while cur_value != comp_value:
     #     cur_value = int(input("Попробуй число больше"))
 print("Победа!!!")
 
-min_limit = 10
-max_limit = 20
-comp_value = randint(min_limit, max_limit)
-cur_value = int(input(f"Угадай число от {min_limit} до {max_limit}:"))
-go_game = True
-while go_game:
-    if cur_value > comp_value:
-        cur_value = int(input("Попробуй число меньше"))
-    elif cur_value < comp_value:
-        cur_value = int(input("Попробуй число больше"))
-    else:
-        go_game = False
-        print("Победа!!!")
+# min_limit = 10
+# max_limit = 20
+# comp_value = randint(min_limit, max_limit)
+# cur_value = int(input(f"Угадай число от {min_limit} до {max_limit}:"))
+# go_game = True
+# while go_game:
+#     if cur_value > comp_value:
+#         cur_value = int(input("Попробуй число меньше"))
+#     elif cur_value < comp_value:
+#         cur_value = int(input("Попробуй число больше"))
+#     else:
+#         go_game = False
+#         print("Победа!!!")
