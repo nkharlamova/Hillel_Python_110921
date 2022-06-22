@@ -1,0 +1,44 @@
+Валютный трейдер USD-UAH
+
+
+Реализовать функционал обмена USD и UAH валют посредством CLI Python.
+
+User Story:
+Начальные условия (можно вынести в config.json):
+    курс: 26.00
+    кол-во на гривневом счету: 10000.0 UAH
+    кол-во на долларовом счету: 0.0 USD
+
+Правила изменения курса доллара:
+    случайным образом в диапазоне:
+    price - delta < new_price < price + delta  (в примере от 25.5 до 26.5)
+
+
+Аргументы запуска файла:
+    RATE - получение текущего курса (USD/UAH)
+    AVAILABLE - получение остатков по счетам
+    BUY XXX - покупка xxx долларов. При отсутствии гривен для покупки выводит сообщение типа UNAVAILABLE, REQUIRED BALANCE UAH 2593, AVAILABLE 1000.0
+    SELL XXX - продажа xxx долларов. При отсутсвии долларов для продажи выводит сообщение типа UNAVAILABLE, REQUIRED BALANCE USD 200, AVAILABLE 135.00
+    BUY ALL - покупка долларов на все возможные гривны.
+    SELL ALL - продажа всех долларов.
+    NEXT - получить следующий курс
+    RESTART - начать игру с начала (с начальными условиями)
+
+Tech Requirements:
+Три файла: 1) trader.py, 2) config.json 3) Состояние системы - свое название
+Состояние системы (курс и доступный баланс для каждой валюты) считывается и хранится в отдельном файле (формат файла не усмотрение разработчика).
+config.json
+    Поля:
+        "delta": 0.5
+Пример использования:
+>>>python trader.py NEXT
+>>>python trader.py RATE
+26.27
+>>>python trader.py NEXT
+>>>python trader.py NEXT
+>>>python trader.py NEXT
+>>>python trader.py RATE
+25.93
+>>>python trader.py BUY 100
+>>>python trader.py AVAILABLE
+USD 100.0 UAH 7407.0
