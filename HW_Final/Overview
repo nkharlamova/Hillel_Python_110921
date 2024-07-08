@@ -1,0 +1,54 @@
+The provided Python code is a currency exchange simulation script. Here's a detailed breakdown of its functionality:
+Overview
+    1. Dependencies:
+        ◦ argparse: For handling command-line arguments.
+        ◦ json: For reading and writing JSON files.
+        ◦ csv: For reading and writing CSV files.
+        ◦ os.path: For file system path operations.
+        ◦ random.uniform: For generating random numbers within a specified range.
+Functions
+    1. get_data(data, filename="system_history.csv"):
+        ◦ Checks if system_history.csv exists.
+        ◦ If not, reads initial data from a JSON file (config.json) and creates system_history.csv.
+    2. read_last_line(filename):
+        ◦ Reads the last line from the system_history.csv file and returns it as a dictionary.
+    3. write_data(data, command):
+        ◦ Appends a new row to the system_history.csv file with the given data and command.
+    4. buy_usd(number, hist_dict):
+        ◦ Buys USD with UAH if sufficient UAH balance is available.
+        ◦ Updates the balances accordingly.
+    5. sell_usd(number, hist_dict):
+        ◦ Sells USD for UAH if sufficient USD balance is available.
+        ◦ Updates the balances accordingly.
+    6. buy_all(hist_dict):
+        ◦ Buys USD with all available UAH.
+        ◦ Updates the balances accordingly.
+    7. sell_all(hist_dict):
+        ◦ Sells all available USD for UAH.
+        ◦ Updates the balances accordingly.
+    8. get_delta(data):
+        ◦ Reads the delta value from config.json.
+    9. change_rate(hist_dict, config_delta):
+        ◦ Adjusts the exchange rate by a random amount within the delta range.
+    10. restart_program(filename):
+        ◦ Deletes the system_history.csv file to reset the program.
+Main Execution Flow
+    • Uses argparse to handle command-line arguments.
+    • Based on the command provided, it performs various operations:
+        ◦ RATE: Displays the current exchange rate.
+        ◦ AVAILABLE: Displays the available balances in UAH and USD.
+        ◦ BUY XXX: Buys a specified amount of USD.
+        ◦ SELL XXX: Sells a specified amount of USD.
+        ◦ BUY ALL: Buys USD with all available UAH.
+        ◦ SELL ALL: Sells all available USD.
+        ◦ NEXT: Updates the exchange rate based on the delta.
+        ◦ RESTART: Resets the program by deleting the history file.
+Usage
+    • The script is executed from the command line, with various commands to interact with the currency exchange system. Examples:
+        ◦ python trader.py RATE
+        ◦ python trader.py AVAILABLE
+        ◦ python trader.py BUY 100
+        ◦ python trader.py SELL ALL
+        ◦ python trader.py NEXT
+        ◦ python trader.py RESTART
+This script simulates a basic currency exchange system, keeping track of the exchange rate and user balances in a CSV file, and allowing for buying and selling operations via command-line commands.
